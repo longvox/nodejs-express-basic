@@ -30,7 +30,10 @@ app.use((req, res, next)=>{
 });
 
 app.get('/',(req,res)=>{
-  res.send('Hế lô');
+  res.render('longvox.hbs',{
+    pageTitle: 'Long Vox',
+    content: 'Waiting Long Vox building website here'
+  });
 });
 
 app.get('/home',(req,res)=>{
