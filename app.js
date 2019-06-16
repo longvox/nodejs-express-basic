@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 var app = express();
-
+const port = process.env.PORT || 3000;
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
@@ -55,4 +55,6 @@ Ipsum a consequuntur esse voluptas minus quia distinctio. Ut qui suscipit harum 
 Quia quo tenetur vel alias esse non reiciendis ratione. Sint et perspiciatis perspiciatis necessitatibus. Commodi veritatis est soluta maxime laboriosam iure odit reprehenderit odio.`
   });
 });
-app.listen(3001);
+app.listen(port, ()=>{
+  console.log(`server is up on port ${port}`);
+});
